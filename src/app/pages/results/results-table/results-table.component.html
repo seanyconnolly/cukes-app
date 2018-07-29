@@ -1,0 +1,46 @@
+<nb-card>
+  <nb-card-header>
+    <div class="row">
+      <div class="col-sm-3">
+          <select class="form-control"
+                  name="jobNameInput" [(ngModel)]="jobName" (ngModelChange)="onJobNameChange($event)">>
+            <option *ngFor="let job of allAvialableJobs" [ngValue]="job">{{job}}</option>
+          </select>
+        </div>
+
+      <div class="col-sm-2">
+          <input class="form-control input-group-lg" type="number" name="jobNumber"
+                 (change)="onJobNumberChange($event.target.value)"
+                 [(ngModel)]="jobNumber"
+          />
+        </div>
+      <div class="col-sm-3">
+          <label class="form-control">{{lastRun}}</label>
+      </div>
+      <div class="col-sm-2">
+        <label *ngIf="source" class="form-control">Results: {{source.length}}</label>
+      </div>
+      <div class="col-sm-2">
+      <div class="right">
+        <button class="btn btn-primary btn-icon" type="button" (click)=getResults()><i class="nb-loop"></i></button>
+      </div>
+        </div>
+    </div>
+
+    <!--<div class="row">-->
+      <!--<div class="col-xxxl-3 col-md-6">-->
+        <!--<ngx-status-card [title]="'ide Passed'"-->
+                         <!--[type]="'success'">-->
+          <!--<i [ngClass]="'nb-lightbulb'"></i>-->
+        <!--</ngx-status-card>-->
+      <!--</div>-->
+    <!--</div>-->
+
+
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>
