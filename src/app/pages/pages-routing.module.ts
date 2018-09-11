@@ -2,8 +2,9 @@ import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 
 import {PagesComponent} from './pages.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
 import {NotFoundComponent} from './miscellaneous/not-found/not-found.component';
+import {HomeComponent} from "./home/home.component";
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 const routes: Routes = [{
   path: '',
@@ -12,6 +13,11 @@ const routes: Routes = [{
     {
       path: 'dashboard',
       component: DashboardComponent,
+    },
+    {
+      path: 'home',
+     // loadChildren: './home/home.module#HomeModule',
+      component: HomeComponent,
     },
     {
       path: 'results',
@@ -42,7 +48,7 @@ const routes: Routes = [{
       loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
     }, {
       path: '',
-      redirectTo: 'dashboard',
+      redirectTo: 'home',
       pathMatch: 'full',
     }, {
       path: '**',

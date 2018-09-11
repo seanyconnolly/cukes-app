@@ -2,8 +2,53 @@ nb-card {
   transform: translate3d(0, 0, 0);
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+:host /deep/ .tr-failed {
+  color: red;
+}
 
 .right {
   float: right;
   margin-right: 15px;
+}
+
+
+.tr-fail {
+  background-color: #980000;
+  color:  white;
+
+}
+
+.tr-fail:hover {
+  background-color: #800000;
+}
+
+
+.tr-passed {
+  background-color: #01846a;
+  color:  white;
+
+}
+
+.tr-passed:hover {
+  background-color: #015040;
+}
+
+.tr-error {
+  background-color: #b68c36;
+  color:  whitesmoke;
+}
+
+.tr-error:hover {
+  background-color: #866728;
+}
+
+.fa{
+  color: white;
 }

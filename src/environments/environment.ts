@@ -10,6 +10,6 @@
 
 export const environment = {
   production: false,
-  resultsAaiUrl: "http://app.suirtech.com:7002"
+  resultsAaiUrl: "http://localhost:7002"
 
 };

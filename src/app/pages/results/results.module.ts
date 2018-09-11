@@ -9,10 +9,10 @@ import {ResultsService} from "../../@core/data/ResultsService";
   imports: [
     ThemeModule,
     ResultsRoutingModule,
-    Ng2SmartTableModule,
+    Ng2SmartTableModule
   ],
   declarations: [
-    ...routedComponents,
+    ...routedComponents
   ],
   providers: [
     ResultsService

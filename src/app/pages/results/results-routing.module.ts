@@ -3,6 +3,8 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {ResultsComponent} from './results.component';
 import {ResultsTableComponent} from './results-table/results-table.component';
+import {ColComponent} from "./results-table/col.component";
+
 
 const routes: Routes = [{
   path: '',
@@ -23,4 +25,5 @@ export class ResultsRoutingModule {
 export const routedComponents = [
   ResultsComponent,
   ResultsTableComponent,
+  ColComponent
 ];
